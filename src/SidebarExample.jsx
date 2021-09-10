@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Home from "./components/Home";
 
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
@@ -19,7 +20,7 @@ const routes = [
     path: "/",
     exact: true,
     sidebar: () => <div>home!</div>,
-    main: () => <h2>Home</h2>
+    main: () => <Home />
   },
   {
     path: "/bubblegum",
