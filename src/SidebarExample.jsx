@@ -5,6 +5,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from "./components/Home";
+import SimpleList from "./components/SimpleList";
 
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
@@ -41,10 +42,11 @@ export default function SidebarExample() {
         <div
           style={{
             padding: "10px",
-            width: "40%",
+            width: "20%",
             background: "#f0f0f0"
           }}
         >
+            <SimpleList />
           <ul style={{ listStyleType: "none", padding: 0 }}>
             <li>
               <Link to="/">Home</Link>
