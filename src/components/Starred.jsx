@@ -6,11 +6,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Home = () => {
+const Starred = () => {
   const classes = useStyles();
   return <Container className={classes.container}>
-      <Typography>Home</Typography>
+      <Typography>Starred</Typography>
   </Container>;
 };
 
-export default Home;
+export default Starred;

@@ -4,9 +4,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Bubblegum from "./components/Bubblegum";
 import Home from "./components/Home";
 import NestedList from "./components/NestedList";
 import SimpleList from "./components/SimpleList";
+import Starred from "./components/Starred";
 
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
@@ -27,7 +29,7 @@ const routes = [
   {
     path: "/bubblegum",
     sidebar: () => <div>bubblegum!</div>,
-    main: () => <h2>Bubblegum</h2>
+    main: () => <Bubblegum />
   },
   {
     path: "/shoelaces",
@@ -37,7 +39,7 @@ const routes = [
   {
     path: "/starred",
     sidebar: () => <div>starred!</div>,
-    main: () => <h2>Starred</h2>
+    main: () => <Starred />
   }
 ];
 
@@ -47,6 +49,7 @@ export default function SidebarExample() {
       <div style={{ display: "flex" }}>
         <div
           style={{
+              marginTop: "70px",
             padding: "10px",
             width: "20%",
             background: "#f0f0f0"

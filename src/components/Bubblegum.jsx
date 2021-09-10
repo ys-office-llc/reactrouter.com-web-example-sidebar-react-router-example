@@ -6,11 +6,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Home = () => {
+const Bubblegum = () => {
   const classes = useStyles();
   return <Container className={classes.container}>
-      <Typography>Home</Typography>
+      <Typography>Bubblegum</Typography>
   </Container>;
 };
 
-export default Home;
+export default Bubblegum;
