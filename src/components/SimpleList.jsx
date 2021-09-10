@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   link: {
-      textDecoration: "none",
+    textDecoration: "none",
+    color: "inherit",
   }
 }));
 

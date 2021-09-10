@@ -5,6 +5,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from "./components/Home";
+import NestedList from "./components/NestedList";
 import SimpleList from "./components/SimpleList";
 
 // Each logical "route" has two components, one for
@@ -32,6 +33,11 @@ const routes = [
     path: "/shoelaces",
     sidebar: () => <div>shoelaces!</div>,
     main: () => <h2>Shoelaces</h2>
+  },
+  {
+    path: "/starred",
+    sidebar: () => <div>starred!</div>,
+    main: () => <h2>Starred</h2>
   }
 ];
 
@@ -47,6 +53,7 @@ export default function SidebarExample() {
           }}
         >
             <SimpleList />
+            <NestedList />
           <ul style={{ listStyleType: "none", padding: 0 }}>
             <li>
               <Link to="/">Home</Link>
