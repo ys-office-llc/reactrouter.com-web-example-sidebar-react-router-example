@@ -1,9 +1,7 @@
 import { Container, makeStyles, Typography } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    paddingTop: theme.spacing(10)
-  }
+  container: {}
 }));
 
 const Starred = () => {

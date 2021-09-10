@@ -2,9 +2,7 @@ import { Container, makeStyles, Typography } from "@material-ui/core"
 import BasicTable from "./BasicTable";
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    paddingTop: theme.spacing(10)
-  }
+  container: {}
 }));
 
 const Home = () => {

@@ -1,8 +1,8 @@
+import { Container, Grid, makeStyles } from "@material-ui/core"
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Bubblegum from "./components/Bubblegum";
 import Home from "./components/Home";
@@ -10,15 +10,6 @@ import NestedList from "./components/NestedList";
 import SimpleList from "./components/SimpleList";
 import Starred from "./components/Starred";
 
-// Each logical "route" has two components, one for
-// the sidebar and one for the main area. We want to
-// render both of them in different places when the
-// path matches the current URL.
-
-// We are going to use this route config in 2
-// spots: once for the sidebar and once in the main
-// content section. All routes are in the same
-// order they would appear in a <Switch>.
 const routes = [
   {
     path: "/",
@@ -43,66 +34,67 @@ const routes = [
   }
 ];
 
+const useStyles = makeStyles(theme => ({
+  container: {
+    height: "100vh",
+    color: "white",
+    paddingTop: theme.spacing(10),
+    backgroundColor: theme.palette.primary.main,
+    position: "sticky",
+    top: 0,
+    [theme.breakpoints.up("sm")]: {
+      backgroundColor: "white",
+      color: "#555",
+      border: "1px solid #ece7e7"
+    },
+  },
+  item: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.up("sm")]: {
+      marginBottom: theme.spacing(3),
+      cursor: "pointer",
+    },
+  },
+  icon: {
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "18px",
+    },
+  },
+  text: {
+    fontWeight: 500,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+}));
+
 export default function SidebarExample() {
+  const classes = useStyles();
   return (
-    <Router>
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-              marginTop: "70px",
-            padding: "10px",
-            width: "20%",
-            background: "#f0f0f0"
-          }}
-        >
+    <Container className={classes.container}>
+      <Router>
+        <Grid container>
+          <Grid item sm={2} xs={2}>
             <SimpleList />
             <NestedList />
-          <ul style={{ listStyleType: "none", padding: 0 }}>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/bubblegum">Bubblegum</Link>
-            </li>
-            <li>
-              <Link to="/shoelaces">Shoelaces</Link>
-            </li>
-          </ul>
-
-          <Switch>
-            {routes.map((route, index) => (
-              // You can render a <Route> in as many places
-              // as you want in your app. It will render along
-              // with any other <Route>s that also match the URL.
-              // So, a sidebar or breadcrumbs or anything else
-              // that requires you to render multiple things
-              // in multiple places at the same URL is nothing
-              // more than multiple <Route>s.
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                children={<route.sidebar />}
-              />
-            ))}
-          </Switch>
-        </div>
-
-        <div style={{ flex: 1, padding: "10px" }}>
-          <Switch>
-            {routes.map((route, index) => (
-              // Render more <Route>s with the same paths as
-              // above, but different components this time.
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                children={<route.main />}
-              />
-            ))}
-          </Switch>
-        </div>
-      </div>
-    </Router>
+          </Grid>
+          <Grid item sm={10} xs={10}>
+            <Switch>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  children={<route.main />}
+                />
+              ))}
+            </Switch>
+          </Grid>
+        </Grid>
+      </Router>
+    </Container>
   );
 }
