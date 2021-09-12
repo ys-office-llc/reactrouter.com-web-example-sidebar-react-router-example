@@ -1,3 +1,11 @@
+# Application execution environment
+
+## On AWS Amplify
+
+### API endpoint
+
+[Admin dashboard](https://dev.d2yubh36jveoqd.amplifyapp.com/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
