@@ -5,11 +5,9 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import NestedList from "./components/NestedList";
-import SimpleList from "./components/SimpleList";
 import Navbar from './components/Navbar';
 import { routes } from "./routes";
-import MenuList, { MenuItem } from './components/MenuItem';
+import MenuList from './components/MenuList';
 
 const useStyles = makeStyles(theme => ({
   container: {
