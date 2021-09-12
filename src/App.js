@@ -9,6 +9,7 @@ import NestedList from "./components/NestedList";
 import SimpleList from "./components/SimpleList";
 import Navbar from './components/Navbar';
 import { routes } from "./routes";
+import MenuList, { MenuItem } from './components/MenuItem';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -55,8 +56,7 @@ function App() {
       <Router>
         <Grid container>
           <Grid item sm={2} xs={2}>
-            <SimpleList />
-            <NestedList />
+            <MenuList />
           </Grid>
           <Grid item sm={10} xs={10}>
             <Switch>
