@@ -1,6 +1,6 @@
-import Bubblegum from "./components/Bubblegum";
-import Home from "./components/Home";
-import Starred from "./components/Starred";
+import Bubblegum from "./pages/Bubblegum";
+import Home from "./pages/Home";
+import Starred from "./pages/Starred";
 
 export const routes = [
   {

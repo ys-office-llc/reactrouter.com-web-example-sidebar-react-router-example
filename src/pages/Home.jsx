@@ -1,5 +1,5 @@
 import { Container, makeStyles, Typography } from "@material-ui/core"
-import BasicTable from "./BasicTable";
+import BasicTable from "../components/BasicTable";
 
 const useStyles = makeStyles(theme => ({
   container: {}
